@@ -90,7 +90,7 @@ public class MainDriver {
 		
 		
 		app.get("/", ctx -> {
-			ctx.result("Welcome to my Micrometer example! And now Jenkins is automatically building it!");
+			ctx.result("Welcome to my Micrometer example! And now Jenkins is automatically building it! And now I'm pusing up to kubernetes!");
 		});
 		
 	}
