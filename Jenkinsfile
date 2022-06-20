@@ -32,6 +32,14 @@ pipeline {
             }
             
         }
+	stage("Deploying to Kubernetes production environment"){
+	    steps{
+	    	script{
+		 sh 'kubectl apply -f pipeline-pod.yml'
+		}
+	    }
+
+	}
         
     }
 }
