@@ -53,6 +53,7 @@ pipeline {
 	stage("Deploying to Kubernetes production environment"){
 	    steps{
 	    	script{
+		 sh 'kubectl delete -f pipeline-pod.yml'
 		 sh 'kubectl apply -f pipeline-pod.yml'
 		}
 	    }
