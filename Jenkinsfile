@@ -53,10 +53,12 @@ pipeline {
 	stage("Deploying to Kubernetes production environment"){
 	    steps{
 	    	script{
+        sh "echo $registry"
 		 sh "echo $registry:$currentBuild.number"
 		 sh "kubectl set image -n ben-space deployment/micro-deployment micrometer-demo-deployment=$registry:$currentBuild.number" //using the terminal
          // sh 'kubectl replace ' //creating a new yml file and replacing the old one
          // sh 'kubectl edit ..' //produce a notepad to edit the resources
+        
 
 		}
 	    }
